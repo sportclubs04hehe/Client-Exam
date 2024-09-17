@@ -1,0 +1,24 @@
+<h1>Order</h1>
+
+<form #orderForm="ngForm" (submit)="placeOrder()">
+    <label for="itemName">Item Name:</label>
+    <input id="itemName" [(ngModel)]="order.itemName" name="itemName" required>
+  
+    <label for="itemQty">Quantity:</label>
+    <input id="itemQty" type="number" [(ngModel)]="order.itemQty" name="itemQty" required>
+  
+    <label for="orderDelivery">Delivery Date:</label>
+    <input id="orderDelivery" type="date" [(ngModel)]="order.orderDelivery" name="orderDelivery" required>
+  
+    <label for="orderAddress">Address:</label>
+    <input id="orderAddress" [(ngModel)]="order.orderAddress" name="orderAddress" required>
+  
+    <label for="phoneNumber">Phone Number:</label>
+    <input id="phoneNumber" [(ngModel)]="order.phoneNumber" name="phoneNumber" required>
+  
+    <button type="submit">Place Order</button>
+  </form>
+
+  <div *ngIf="isOrderPlaced" class="order-success">
+    Bạn đã đặt hàng thành công!
+  </div>
